@@ -1,0 +1,56 @@
+How to run the Demo (Step-by-Step):
+
+Option A: Using your IDE (IntelliJ / Eclipse / VS Code)
+    -Navigate to src/main/java/com/booking/Driver.java.
+    -Right-click the file and select Run 'Driver.main()'.\
+    -Observe the Console Window at the bottom. You will see the output log matching your requirements.
+
+Option B: Using Terminal (Command Line):
+    -If you have Maven installed, open your project folder in terminal and run:
+
+mvn spring-boot:run
+
+3. Expected Output Log (Demo Result):
+    -When you run the code, your console should look like this:
+
+--- STARTING SYSTEM DEMO ---
+
+i: registerShow: TMKOC -> Comedy
+o: TMKOC show is registered !!
+
+i: onboardShowSlots: TMKOC 9:00-11:00 3
+o: Sorry, show timings are of 1 hour only
+
+i: onboardShowSlots: TMKOC 9:00-10:00 3, 12:00-13:00 2, 15:00-16:00 5
+o: Done!
+
+i: showAvailByGenre: Comedy
+o: TMKOC: (9:00-10:00) 3
+o: TMKOC: (12:00-13:00) 2
+o: TMKOC: (15:00-16:00) 5
+
+i: bookTicket: (UserA, TMKOC, 12:00, 2)
+o: Booked. Booking id: a1b2
+
+i: cancelBookingId: a1b2
+o: Booking Canceled
+
+i: showAvailByGenre: Comedy
+o: TMKOC: (9:00-10:00) 3
+o: TMKOC: (12:00-13:00) 2
+o: TMKOC: (15:00-16:00) 5
+
+i: bookTicket: (UserB, TMKOC, 12:00, 3)
+o: Slot full. Added to waitlist.
+
+--- Trending Show Feature ---
+o: Trending: TMKOC
+
+--- DEMO COMPLETED ---
+
+
+4. Verification Checklist for the "Full Marks":
+
+-Waitlist Test: Try booking 3 seats when only 2 are available. It should say "Added to waitlist".
+-Conflict Test: Try booking UserA for Show1 at 9:00 and then UserA for Show2 at 9:00. It should fail.
+-Ranking Test: Register two different shows for the same genre at different times. Run showAvailByGenre. They must appear in order of time (9:00 first, then 10:00).
