@@ -81,7 +81,7 @@ Slot full. Added to waitlist.
 [x] Waitlist promotion on cancellation.
 [x] Bonus: Trending shows.
 
-=============
+
 Demo Output:
 =============
 
