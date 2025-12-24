@@ -81,4 +81,55 @@ Slot full. Added to waitlist.
 [x] Waitlist promotion on cancellation.
 [x] Bonus: Trending shows.
 
+=============
+Demo Output:
+=============
 
+******************************************
+      SHOW BOOKING SYSTEM DEMO START      
+******************************************
+
+i: registerShow: TMKOC -> Comedy
+TMKOC show is registered !!
+
+i: onboardShowSlots: TMKOC 9:00-11:00 3
+Sorry, show timings are of 1 hour only
+
+i: onboardShowSlots: TMKOC 9:00-10:00 3, 12:00-13:00 2, 15:00-16:00 5
+Done!
+
+i: registerShow: The Sonu Nigam Live Event -> Singing
+The Sonu Nigam Live Event show is registered !!
+Done!
+
+i: showAvailByGenre: Comedy
+TMKOC: (9:00-10:00) 3
+TMKOC: (12:00-13:00) 2
+TMKOC: (15:00-16:00) 5
+
+i: bookTicket: (UserA, TMKOC, 12:00, 2)
+Booked. Booking id: ab05
+
+i: showAvailByGenre: Comedy
+TMKOC: (9:00-10:00) 3
+TMKOC: (12:00-13:00) 2
+TMKOC: (15:00-16:00) 5
+
+i: cancelBookingId: ab05
+Booking Canceled
+
+i: showAvailByGenre: Comedy
+TMKOC: (9:00-10:00) 3
+TMKOC: (12:00-13:00) 2
+TMKOC: (15:00-16:00) 5
+
+i: bookTicket: (UserB, TMKOC, 12:00, 3) -- Note: Capacity is 2
+Slot full. Added to waitlist.
+
+--- Trending Show Feature ---
+
+******************************************
+       SHOW BOOKING SYSTEM DEMO END       
+******************************************
+
+Process finished with exit code 0
